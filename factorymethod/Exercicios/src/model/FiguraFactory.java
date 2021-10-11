@@ -2,17 +2,17 @@ package model;
 
 import java.util.HashMap;
 
-public abstract class FiguraFactory {
+public class FiguraFactory {
 
-	public Figura createFigura(String tipoFigura) { 
+	public static Figura createFigura(NomesFiguras nomesFigura) { 
 	    
-	    if (tipoFigura == null || tipoFigura.isEmpty())
+	    if (nomesFigura == null || nomesFigura.isEmpty())
 			return null;
-		if ("TRIANGULO".equals(tipoFigura)) {
+		if (nomesFigura.equals("TRIANGULO")) {
 			return new TrEquilatero();
-		} else if ("CIRCULO".equals(tipoFigura)) {
+		} else if (nomesFigura.equals("CIRCULO")) {
 			return new Circulo();
-		} else if ("QUADRADO".equals(tipoFigura)) {
+		} else if (nomesFigura.equals("QUADRADO")) {
 			return new Quadrado();
 		}
 		return null;
